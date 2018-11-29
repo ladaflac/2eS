@@ -1,0 +1,1 @@
+ java -jar C:\Users\Lada\PycharmProjects\2eS\SGE\SeleniumGridExtras-1.12.2-SNAPSHOT-jar-with-dependencies.jar

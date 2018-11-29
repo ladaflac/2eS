@@ -1,0 +1,31 @@
+{
+  "theConfigMap": {
+    "auto_update_browser_versions": "1",
+    "hub_config_files": [
+      "hub_4444.json"
+    ],
+    "auto_start_hub": "1",
+    "iedriver": {
+      "bit": "x64",
+      "version": "3.141.0"
+    },
+    "default_role": "hub",
+    "chromedriver": {
+      "bit": "32",
+      "version": "2.44"
+    },
+    "auto_update_drivers": "0",
+    "video_recording_options": {
+      "videos_to_keep": "40"
+    },
+    "auto_start_node": "1",
+    "hub_config": {},
+    "log_maximum_age_ms": 31536000000,
+    "webdriver": {
+      "version": "2.53"
+    },
+    "node_config_files": [
+      "node_5555.json"
+    ]
+  }
+}
