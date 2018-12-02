@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from selenium import webdriver
+from selenium import webdriver, selenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -38,12 +38,14 @@ class SnipeitappLicensesExpiryTestPy2V2(unittest.TestCase):
         today = date.today()
         while row < len(rows):
             expiration_date_source = driver.find_element_by_xpath("//table[@id='licensesTable']/tbody[1]/tr[" + str(row) + "]/td[3]").text
-            if expiration_date_source == '':
-                print("Expiration date in row %d is empty" % row)
-            else:
+            if expiration_date_source != '':
                 expiration_date = datetime.strptime(expiration_date_source[4:16], '%b %d, %Y').date()
                 assert expiration_date >= today, "Expiration date '%s' should not be in the past" % expiration_date
                 print("Expiration date " + str(expiration_date) + " in row %d is valid" % row)
+            elif expiration_date_source == '':
+                print("Expiration date in row %d is empty" % row)
+            else:
+                print("Expiration date in row %d does not match the expected format and is not checked" % row)
             row += 1
 
     def tearDown(self):
